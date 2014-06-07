@@ -1,0 +1,31 @@
+<!---
++---------------------------------------------------------------------------------+
+| MyGate Communications - Ruby on Rails Virtual Auth and Settle Sample            |
+| Copyright (c) 2007 MyGate Communications (Pty) Ltd                  		  |
+| All rights reserved.                                                            |
++---------------------------------------------------------------------------------+
+| The initial developer of the original code is MyGate Global		          |
++---------------------------------------------------------------------------------+
+
+ * "Ruby on Rails MyVirtual Sample" payment page
+ *
+ * @category   Code Sample
+ * @package    MyGate Communications (Pty) Ltd
+ * @subpackage Virtual Transaction (Please contact MyGate to enable immediate settlement if your account requires it)
+ * @author     MyGate Global - support@mygateglobal.com
+ * @copyright  Copyright (c) 2007 MyGate Communications (Pty) Ltd
+ * @link       http://www.mygateglobal.com/
+ * 
+ * @Note       This code serves as an example only. It is not recommended that you use this code for production purposes.
+ --->
+
+<h2>Successful Transaction</h2>
+Response <br/>
+<br/>
+<div style="float: leftl;width: 100%;margin: 30px;">
+  <% @response.each do |key,val| %>
+    <%= key %> => <%= val %> <br/>
+  <% end %>
+</div>
+<br/>
+<%= link_to "Back To Home", "/" %>

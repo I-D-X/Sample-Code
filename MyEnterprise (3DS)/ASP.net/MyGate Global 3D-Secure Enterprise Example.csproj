@@ -1,0 +1,86 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{43533EA1-D802-47D5-9844-826F4A894516}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MyGate_Global_3D_Secure_Enterprise_Example</RootNamespace>
+    <AssemblyName>MyGate Global 3D-Secure Enterprise Example</AssemblyName>
+    <OutputPath>bin\</OutputPath>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21}%3b{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\3dsecure.mygateglobal.com\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\enterprise.mygateglobal.com\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <None Include="Default.aspx" />
+    <None Include="Global.asax" />
+    <None Include="MyGate_Global_3D_Secure_Enterprise_Example.css" />
+    <None Include="Web References\3dsecure.mygateglobal.com\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\3dsecure.mygateglobal.com\ws3DSecure.wsdl" />
+    <None Include="Web References\enterprise.mygateglobal.com\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\enterprise.mygateglobal.com\wsCCPayments.wsdl" />
+    <None Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+    <WebReferenceUrl Include="https://3dsecure.mygateglobal.com/ws3DSecure.wsdl">
+      <UrlBehavior>Static</UrlBehavior>
+      <UpdateFromURL>https://3dsecure.mygateglobal.com/ws3DSecure.wsdl</UpdateFromURL>
+      <RelPath>Web References\3dsecure.mygateglobal.com</RelPath>
+      <Namespace>MyGate_Global_3D_Secure_Enterprise_Example_3dsecure_mygateglobal_com</Namespace>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://enterprise.mygateglobal.com/5x0x0/wsCCPayments.wsdl">
+      <UrlBehavior>Static</UrlBehavior>
+      <UpdateFromURL>https://enterprise.mygateglobal.com/5x0x0/wsCCPayments.wsdl</UpdateFromURL>
+      <RelPath>Web References\enterprise.mygateglobal.com</RelPath>
+      <Namespace>MyGate_Global_3D_Secure_Enterprise_Example_enterprise_mygateglobal_com</Namespace>
+    </WebReferenceUrl>
+  </ItemGroup>
+</Project>

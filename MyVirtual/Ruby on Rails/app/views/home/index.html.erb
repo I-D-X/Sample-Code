@@ -1,0 +1,46 @@
+<!---
++---------------------------------------------------------------------------------+
+| MyGate Communications - Ruby on Rails Virtual Auth and Settle Sample      	  |
+| Copyright (c) 2007 MyGate Communications (Pty) Ltd                  		  |
+| All rights reserved.                                                       	  |
++---------------------------------------------------------------------------------+
+| The initial developer of the original code is MyGate Global		          |
++---------------------------------------------------------------------------------+
+
+ * "Ruby on Rails MyVirtual Sample" payment page
+ *
+ * @category   Code Sample
+ * @package    MyGate Communications (Pty) Ltd
+ * @subpackage Virtual Transaction (Please contact MyGate to enable immediate settlement if your account requires it)
+ * @author     MyGate Global - support@mygateglobal.com
+ * @copyright  Copyright (c) 2007 MyGate Communications (Pty) Ltd
+ * @link       http://www.mygateglobal.com/
+ * 
+ * @Note	   This code serves as an example only. It is not recommended that you use this code for production purposes.
+ --->
+
+<h1>MyVirtual Example</h1>
+
+<!---Setting variables that get sent to MyGate --->
+
+<%= form_tag 'https://virtual.mygateglobal.com/PaymentPage.cfm', :name => 'Virtual Post', :method => :post do %>
+  
+  <!---0 = Test Mode. 1 = Live Mode--->
+  <%= hidden_field_tag "Mode", "0" %>
+
+  <!---Be sure to populate these variables with the ones you generated in the MyGate Developer Center. Go there now by going to http://developer.mygateglobal.com--->
+  <%= hidden_field_tag "MerchantID", "" %>
+  <%= hidden_field_tag "ApplicationID", "" %>
+
+  <!---The amount to be processed--->
+  Amount: <%= text_field_tag "Amount", "0.01" %><br/><br/>
+
+  <!---The authorisation and settlement currency--->
+  <%= hidden_field_tag "Currency", "ZAR" %>
+
+  <!---The result pages (Where MyGate returns the card holder to after the transaction)--->
+  <%= hidden_field_tag "RedirectSuccessfulURL", "http://localhost:3000/successfullurl" %>
+  <%= hidden_field_tag "RedirectFailedURL", "http://localhost:3000/failureurl" %>
+
+  <%= submit_tag "Process Transaction" %>
+<% end %>

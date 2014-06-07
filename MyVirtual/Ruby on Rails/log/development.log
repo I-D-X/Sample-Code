@@ -1,0 +1,62 @@
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-19 16:48:11 +0200
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 121ms (Views: 120.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/successfullurl" for 127.0.0.1 at 2012-05-19 17:07:03 +0200
+  Processing by HomeController#success as HTML
+  Parameters: {"_ERROR_DETAIL"=>"", "_BANK_ERROR_MESSAGE"=>"", "_3DSTATUS"=>"07", "FIELDNAMES"=>"_RESULT,TXTPRICE,_ERROR_CODE,_3DSTATUS,_CARDCOUNTRY,_ERROR_SOURCE,_ERROR_MESSAGE,_ERROR_DETAIL,_BANK_ERROR_CODE,_BANK_ERROR_MESSAGE", "TXTPRICE"=>"0.01", "_ERROR_CODE"=>"", "_ERROR_SOURCE"=>"", "_BANK_ERROR_CODE"=>"", "_CARDCOUNTRY"=>"United States", "_ERROR_MESSAGE"=>"", "_RESULT"=>"1"}
+WARNING: Can't verify CSRF token authenticity
+Rendered home/success.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-19 17:07:12 +0200
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-19 17:10:24 +0200
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 38ms (Views: 37.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-19 17:22:20 +0200
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-19 17:25:46 +0200
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 5ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-19 17:25:46 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-05-19 17:25:46 +0200
+Served asset /home.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-19 17:25:46 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-19 17:25:46 +0200
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-05-19 17:25:46 +0200
+Served asset /home.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-19 17:25:46 +0200
+Served asset /application.js - 304 Not Modified (0ms)

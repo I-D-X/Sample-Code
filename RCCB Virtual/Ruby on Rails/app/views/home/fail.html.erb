@@ -1,0 +1,33 @@
+<!---
++---------------------------------------------------------------------------------+
+| MyGate Communications - Ruby on Rails MyVirtual Auth and Settle Sample          |
+| Copyright (c) 2007 MyGate Communications (Pty) Ltd                  		  |
+| All rights reserved.                                                            |
++---------------------------------------------------------------------------------+
+| The initial developer of the original code is MyGate Global		          |
++---------------------------------------------------------------------------------+
+
+ * "Ruby on Rails MyVirtual RCCB Sample" payment page
+ *
+ * @category   Code Sample
+ * @package    MyGate Communications (Pty) Ltd
+ * @subpackage Virtual Transaction (Please contact MyGate to enable immediate settlement if your account requires it)
+ * @author     MyGate Global - support@mygateglobal.com
+ * @copyright  Copyright (c) 2007 MyGate Communications (Pty) Ltd
+ * @link       http://www.mygateglobal.com/
+ * 
+ * @Note       This code serves as an example only. It is not recommended that you use this code for production purposes.
+ --->
+
+<h2>Failed Transaction</h2>
+Reason <br/>
+<br/>
+
+<!---In the event of a failed transaction, most merchants will only display the bank error message to the client as this will often give the most descriptive message relevant to the client. E.g. Insufficient funds, Blocked Card, etc. --->
+<div style="float: leftl;width: 100%;margin: 30px;">
+  <% @response.each do |key,val| %>
+    <%= key %> => <%= val %> <br/>
+  <% end %>
+</div>
+<br/>
+<%= link_to "Back To Home", "/" %>

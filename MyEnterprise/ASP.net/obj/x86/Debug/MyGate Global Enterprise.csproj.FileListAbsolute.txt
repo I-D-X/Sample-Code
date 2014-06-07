@@ -1,0 +1,5 @@
+C:\Users\Administrator\Documents\SharpDevelop Projects\MyGate Global Enterprise\MyGate Global Enterprise\bin\MyGate Global Enterprise.dll
+C:\Users\Administrator\Documents\SharpDevelop Projects\MyGate Global Enterprise\MyGate Global Enterprise\bin\MyGate Global Enterprise.pdb
+C:\Users\Administrator\Documents\SharpDevelop Projects\MyGate Global Enterprise\MyGate Global Enterprise\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\SharpDevelop Projects\MyGate Global Enterprise\MyGate Global Enterprise\obj\x86\Debug\MyGate Global Enterprise.dll
+C:\Users\Administrator\Documents\SharpDevelop Projects\MyGate Global Enterprise\MyGate Global Enterprise\obj\x86\Debug\MyGate Global Enterprise.pdb

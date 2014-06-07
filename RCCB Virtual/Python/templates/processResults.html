@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>processResults</title>
+	</head>
+	<body>
+		<div>
+			{% if data['success'] %}
+				{{ data['result'] }}</br>
+				Card Country: {{ data['cardCountry'] }}</br>
+				Processed Amount: {{ data['price'] }}</br>
+				3D-Secure Status: {{ data['threedsecure'] }}</br>
+				Custom Variable: {{ data['variable1'] }}
+			{% else %}
+				{{ data['result'] }}</br>
+				Error Code: {{ data['errorCode'] }}</br>
+				Error Message: {{ data['errorMessage'] }}</br>
+				Error Detail: {{ data['errorDetail'] }}</br>
+				Custom Variable: {{ data['variable1'] }}</br>
+				</br>
+				Bank Error Code: {{ data['bankErrorCode'] }}</br>
+				Bank Error Message: {{ data['bankErrorMessage'] }}
+			{% endif %}
+				
+		</div>
+	</body>
+</html>
+
