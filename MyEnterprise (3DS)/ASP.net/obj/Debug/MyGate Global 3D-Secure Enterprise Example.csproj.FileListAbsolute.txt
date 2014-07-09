@@ -1,0 +1,5 @@
+C:\Users\David\Documents\Visual Studio 2008\Projects\3DSecure Enterprise Example\MyGate Global 3D-Secure Enterprise Example\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\David\Documents\Visual Studio 2008\Projects\3DSecure Enterprise Example\MyGate Global 3D-Secure Enterprise Example\bin\MyGate Global 3D-Secure Enterprise Example.dll
+C:\Users\David\Documents\Visual Studio 2008\Projects\3DSecure Enterprise Example\MyGate Global 3D-Secure Enterprise Example\bin\MyGate Global 3D-Secure Enterprise Example.pdb
+C:\Users\David\Documents\Visual Studio 2008\Projects\3DSecure Enterprise Example\MyGate Global 3D-Secure Enterprise Example\obj\Debug\MyGate Global 3D-Secure Enterprise Example.dll
+C:\Users\David\Documents\Visual Studio 2008\Projects\3DSecure Enterprise Example\MyGate Global 3D-Secure Enterprise Example\obj\Debug\MyGate Global 3D-Secure Enterprise Example.pdb

@@ -1,5 +1,0 @@
-C:\Users\Administrator\Documents\SharpDevelop Projects\MyGate Global 3D-Secure Enterprise Example\MyGate Global 3D-Secure Enterprise Example\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Administrator\Documents\SharpDevelop Projects\MyGate Global 3D-Secure Enterprise Example\MyGate Global 3D-Secure Enterprise Example\bin\MyGate Global 3D-Secure Enterprise Example.dll
-C:\Users\Administrator\Documents\SharpDevelop Projects\MyGate Global 3D-Secure Enterprise Example\MyGate Global 3D-Secure Enterprise Example\bin\MyGate Global 3D-Secure Enterprise Example.pdb
-C:\Users\Administrator\Documents\SharpDevelop Projects\MyGate Global 3D-Secure Enterprise Example\MyGate Global 3D-Secure Enterprise Example\obj\x86\Debug\MyGate Global 3D-Secure Enterprise Example.dll
-C:\Users\Administrator\Documents\SharpDevelop Projects\MyGate Global 3D-Secure Enterprise Example\MyGate Global 3D-Secure Enterprise Example\obj\x86\Debug\MyGate Global 3D-Secure Enterprise Example.pdb

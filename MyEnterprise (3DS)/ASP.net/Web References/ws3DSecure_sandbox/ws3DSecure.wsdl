@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:tns1="http://rpc.xml.coldfusion" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="https://3dsecure.mygateglobal.com/3DSecure.cfc" xmlns:intf="https://3dsecure.mygateglobal.com/3DSecure.cfc" targetNamespace="https://3dsecure.mygateglobal.com/3DSecure.cfc" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:tns1="http://rpc.xml.coldfusion" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="https://dev-3dsecure.mygateglobal.com/3DSecure.cfc" xmlns:intf="https://dev-3dsecure.mygateglobal.com/3DSecure.cfc" targetNamespace="https://dev-3dsecure.mygateglobal.com/3DSecure.cfc" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
-    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="https://3dsecure.mygateglobal.com/3DSecure.cfc">
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="https://dev-3dsecure.mygateglobal.com/3DSecure.cfc">
       <xsd:import namespace="http://xml.apache.org/xml-soap" />
       <xsd:import namespace="http://rpc.xml.coldfusion" />
       <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
-      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
       <xsd:complexType name="ArrayOf_xsd_anyType">
         <xsd:complexContent mixed="false">
           <xsd:restriction base="soapenc:Array">
@@ -29,10 +28,9 @@
       </xsd:complexType>
     </xsd:schema>
     <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://rpc.xml.coldfusion">
-      <xsd:import namespace="https://3dsecure.mygateglobal.com/3DSecure.cfc" />
+      <xsd:import namespace="https://dev-3dsecure.mygateglobal.com/3DSecure.cfc" />
       <xsd:import namespace="http://xml.apache.org/xml-soap" />
       <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
-      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
       <xsd:complexType name="CFCInvocationException">
         <xsd:sequence />
       </xsd:complexType>
@@ -44,10 +42,9 @@
       </xsd:complexType>
     </xsd:schema>
     <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xml.apache.org/xml-soap">
-      <xsd:import namespace="https://3dsecure.mygateglobal.com/3DSecure.cfc" />
+      <xsd:import namespace="https://dev-3dsecure.mygateglobal.com/3DSecure.cfc" />
       <xsd:import namespace="http://rpc.xml.coldfusion" />
       <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
-      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
       <xsd:complexType name="mapItem">
         <xsd:sequence>
           <xsd:element name="key" nillable="true" type="xsd:anyType" />
@@ -130,43 +127,43 @@
     <wsdl:operation name="lookup">
       <wsdlsoap:operation soapAction="" />
       <wsdl:input name="lookupRequest">
-        <wsdlsoap:body use="encoded" namespace="https://3dsecure.mygateglobal.com/3DSecure.cfc" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        <wsdlsoap:body use="encoded" namespace="https://dev-3dsecure.mygateglobal.com/3DSecure.cfc" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
       <wsdl:output name="lookupResponse">
-        <wsdlsoap:body use="encoded" namespace="https://3dsecure.mygateglobal.com/3DSecure.cfc" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        <wsdlsoap:body use="encoded" namespace="https://dev-3dsecure.mygateglobal.com/3DSecure.cfc" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:output>
       <wsdl:fault name="CFCInvocationException">
-        <wsdlsoap:fault use="encoded" name="CFCInvocationException" namespace="https://3dsecure.mygateglobal.com/3DSecure.cfc" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        <wsdlsoap:fault use="encoded" name="CFCInvocationException" namespace="https://dev-3dsecure.mygateglobal.com/3DSecure.cfc" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="authenticate">
       <wsdlsoap:operation soapAction="" />
       <wsdl:input name="authenticateRequest">
-        <wsdlsoap:body use="encoded" namespace="https://3dsecure.mygateglobal.com/3DSecure.cfc" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        <wsdlsoap:body use="encoded" namespace="https://dev-3dsecure.mygateglobal.com/3DSecure.cfc" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
       <wsdl:output name="authenticateResponse">
-        <wsdlsoap:body use="encoded" namespace="https://3dsecure.mygateglobal.com/3DSecure.cfc" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        <wsdlsoap:body use="encoded" namespace="https://dev-3dsecure.mygateglobal.com/3DSecure.cfc" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:output>
       <wsdl:fault name="CFCInvocationException">
-        <wsdlsoap:fault use="encoded" name="CFCInvocationException" namespace="https://3dsecure.mygateglobal.com/3DSecure.cfc" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        <wsdlsoap:fault use="encoded" name="CFCInvocationException" namespace="https://dev-3dsecure.mygateglobal.com/3DSecure.cfc" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="tokenLookup">
       <wsdlsoap:operation soapAction="" />
       <wsdl:input name="tokenLookupRequest">
-        <wsdlsoap:body use="encoded" namespace="https://3dsecure.mygateglobal.com/3DSecure.cfc" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        <wsdlsoap:body use="encoded" namespace="https://dev-3dsecure.mygateglobal.com/3DSecure.cfc" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:input>
       <wsdl:output name="tokenLookupResponse">
-        <wsdlsoap:body use="encoded" namespace="https://3dsecure.mygateglobal.com/3DSecure.cfc" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        <wsdlsoap:body use="encoded" namespace="https://dev-3dsecure.mygateglobal.com/3DSecure.cfc" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:output>
       <wsdl:fault name="CFCInvocationException">
-        <wsdlsoap:fault use="encoded" name="CFCInvocationException" namespace="https://3dsecure.mygateglobal.com/3DSecure.cfc" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        <wsdlsoap:fault use="encoded" name="CFCInvocationException" namespace="https://dev-3dsecure.mygateglobal.com/3DSecure.cfc" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
       </wsdl:fault>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="3DSecure1">
     <wsdl:port name="3DSecure.cfc" binding="intf:3DSecure.cfcSoapBinding">
-      <wsdlsoap:address location="https://3dsecure.mygateglobal.com/3DSecure.cfc" />
+      <wsdlsoap:address location="https://dev-3dsecure.mygateglobal.com/3DSecure.cfc" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

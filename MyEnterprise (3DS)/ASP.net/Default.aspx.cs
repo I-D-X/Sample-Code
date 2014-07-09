@@ -57,16 +57,21 @@ namespace MyGate_Global_3D_Secure_Enterprise_Example
 			//Setting variables for use in the webservice invokation...
 	
 			//Be sure to populate these variables with the ones you generated in the MyGate Developer Center. Go there now by going to http://developer.mygateglobal.com
-			 string MerchantUID = "";
-			 string ApplicationUID = "";
+
+            string MerchantUID = "";
+            string ApplicationUID = "";
+
+            //The GatewayID associated to your Application UID.
+            string GatewayID = "";
+
+            //0 = Test Mode. 1 = Live Mode
+            int Mode = 0;
 			
-			//The GatewayID associated to your Application UID.
-			 string GatewayID = "21";
+
+
 
 			 string Terminal = "Terminal";
 			
-			//0 = Test Mode. 1 = Live Mode
-			 double Mode = 1;
 			
 			//Currency and price of transaction
 			 string Currency = "ZAR";
@@ -75,11 +80,11 @@ namespace MyGate_Global_3D_Secure_Enterprise_Example
 			//Credit Card details
 			 string CardHolder = "Mr J Soap";
 			 string CardNumber = "4111111111111111";
-			 string ExpiryMonth = "12";
-			 string ExpiryYear = "2015";
+			 string ExpiryMonth = "02";
+			 string ExpiryYear = "2016";
 			 string CVV = "123";
 			 string CardType = "4";
-			 string PanExp = "1512";
+			 string PanExp = "1602";
 			 
 			 //Get the browser header and user agent form the clients browser.
 			 string BrowserHeader = Request.ServerVariables["HTTP_USER_AGENT"];
@@ -114,7 +119,7 @@ namespace MyGate_Global_3D_Secure_Enterprise_Example
 		                        CVV, CardType);
 			 }
 			 else if (step.Equals("2")) {
-			 	cmpi_authenticate(Request.Form["MD"], Request.Form["PaRes"], GatewayID, MerchantUID, ApplicationUID, Terminal, Mode.ToString(), Amount, Currency,
+			 	cmpi_authenticate(Request.Form["MD"], Request.Form["PaRes"], GatewayID, MerchantUID, ApplicationUID, Terminal, Mode, Amount, Currency,
 		                        CardType, CardNumber, CardHolder, CVV, ExpiryMonth, ExpiryYear);
 			 }
 			
@@ -123,13 +128,19 @@ namespace MyGate_Global_3D_Secure_Enterprise_Example
 		//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 		#region Click_Button_OK
 		
-		public void cmpi_lookup(string MerchantUID, string ApplicationUID, double Mode, string CardNumber, 
+		public void cmpi_lookup(string MerchantUID, string ApplicationUID, int Mode, string CardNumber, 
 		                        string PanExp, string Amount, string UserAgent, string BrowserHeader, string Recurring, 
 		                        string RecurringFrequency, string RecurringEnd, string Installament, string ACSCallbackURL,
 		                        string GatewayID, string Terminal, string Currency, string CardHolder, string ExpiryMonth, string ExpiryYear, 
-		                        string CVV, string CardType) {
-			
-			MyGate_Global_3D_Secure_Enterprise_Example_3dsecure_mygateglobal_com.Item3DSecure1 lookupReference = new MyGate_Global_3D_Secure_Enterprise_Example_3dsecure_mygateglobal_com.Item3DSecure1();
+		                        string CVV, string CardType) 
+        {
+
+            //Sandbox service
+            //ws3DSecure_sandbox.Item3DSecure1 lookupReference = new ws3DSecure_sandbox.Item3DSecure1();
+
+            //Production service
+            ws3DSecure.Item3DSecure1 lookupReference = new ws3DSecure.Item3DSecure1();
+
 			
 			object[] arrResults = lookupReference.lookup(
 				MerchantUID,  								//MerchantUID
@@ -181,7 +192,7 @@ namespace MyGate_Global_3D_Secure_Enterprise_Example
 					Response.Write("</tr>");
 					Response.Write("<tr>");
 						Response.Write("<td ><div align='right'>PaReq :</div></td>");
-						Response.Write("<td ><textarea cols='50' rows='5' style='width:40' name='PaReq' >" + PAReqMsg + "</textarea></textarea></td>");
+						Response.Write("<td ><textarea cols='50' rows='5' style='width:400' name='PaReq' >" + PAReqMsg + "</textarea></textarea></td>");
 					Response.Write("</tr>");
 					Response.Write("<tr>");
 						Response.Write("<td ><div align='right'>TermUrl :</div></td>");
@@ -192,20 +203,26 @@ namespace MyGate_Global_3D_Secure_Enterprise_Example
 						Response.Write("<td ><input type='text' style='width:400' name='MD' value='" + transactionIndex + "'/></td>");
 					Response.Write("</tr>");
 					Response.Write("<tr>");
-						Response.Write("<td colspan='2'><div align='center'><input type='submit' value='Submit Form' style='width:250' ></div></td>");
+						Response.Write("<td colspan='2' align='center'><input type='submit' value='Submit Form' style='width:250' ></td>");
 					Response.Write("</tr>");
 					Response.Write("</table>");
 				Response.Write("</form>");
 			}
 			else {
-				performAuth(transactionIndex, GatewayID, MerchantUID, ApplicationUID, Terminal, Mode.ToString(), Amount, Currency,
+				performAuth(transactionIndex, GatewayID, MerchantUID, ApplicationUID, Terminal, Mode, Amount, Currency,
 		                        CardType, CardNumber, CardHolder, CVV, ExpiryMonth, ExpiryYear);
 			}
 		}
 		
-		public void cmpi_authenticate(string TransactionIndex, string PAResPayload, string GatewayID, string MerchantUID, string ApplicationUID, string Terminal, string Mode, string Amount, string Currency, 
-		                        string CardType, string CardNumber, string CardHolder, string CVV, string ExpiryMonth, string ExpiryYear) {
-			MyGate_Global_3D_Secure_Enterprise_Example_3dsecure_mygateglobal_com.Item3DSecure1 authenticateReference = new MyGate_Global_3D_Secure_Enterprise_Example_3dsecure_mygateglobal_com.Item3DSecure1();
+		public void cmpi_authenticate(string TransactionIndex, string PAResPayload, string GatewayID, string MerchantUID, string ApplicationUID, string Terminal, int Mode, string Amount, string Currency, 
+		                        string CardType, string CardNumber, string CardHolder, string CVV, string ExpiryMonth, string ExpiryYear)
+        {
+
+            //Sandbox service
+            //ws3DSecure_sandbox.Item3DSecure1 authenticateReference = new ws3DSecure_sandbox.Item3DSecure1(); 
+
+            //Production service
+            ws3DSecure.Item3DSecure1 authenticateReference = new ws3DSecure.Item3DSecure1();
 			
 			object[] arrResults = authenticateReference.authenticate(
 				TransactionIndex,  						//MerchantUID
@@ -218,9 +235,14 @@ namespace MyGate_Global_3D_Secure_Enterprise_Example
 		}
 		
 		public void performAuth(string TransactionIdValue, string GatewayID, string MerchantUID, string ApplicationUID, string Terminal, 
-		                        string Mode, string Amount, string Currency, string CardType, string CardNumber, string CardHolder, 
-		                        string CVV, string ExpiryMonth, string ExpiryYear) {
-			MyGate_Global_3D_Secure_Enterprise_Example_enterprise_mygateglobal_com.ePayService authReference = new MyGate_Global_3D_Secure_Enterprise_Example_enterprise_mygateglobal_com.ePayService();
+		                        int Mode, string Amount, string Currency, string CardType, string CardNumber, string CardHolder, 
+		                        string CVV, string ExpiryMonth, string ExpiryYear)
+        {
+            //Sandbox service
+            //wsCCPayments_sandbox.ePayService authReference = new wsCCPayments_sandbox.ePayService();
+
+            //Production service
+            wsCCPayments.ePayService authReference = new wsCCPayments.ePayService();
 			
 			object[] arrResults = authReference.fProcess(
 				GatewayID,									//GatewayID
@@ -229,7 +251,7 @@ namespace MyGate_Global_3D_Secure_Enterprise_Example
 				"1",										//Action
 				TransactionIdValue,							//TransactionIndex
 				Terminal,									//Terminal
-				Mode,										//Mode
+				Mode.ToString(),							//Mode
 				"Ref12345",									//MerchantReference
 				Amount,										//Amount
 				Currency,									//Currency
@@ -263,18 +285,21 @@ namespace MyGate_Global_3D_Secure_Enterprise_Example
 			foreach(string result in arrResults)
 			{
 				//unpack result array
-				int delimiter = result.IndexOf("||");
-				string resultDefn = result.Substring(0, delimiter);				
-				string resultValue = result.Substring(delimiter + 2);
+                if (result != null)
+                {
+				    int delimiter = result.IndexOf("||");
+				    string resultDefn = result.Substring(0, delimiter);				
+				    string resultValue = result.Substring(delimiter + 2);
 
-				//if 'result' not -1, authorisation was successful
-				if (resultDefn == "Result" && resultValue != "-1") authorisationSuccessful = true;
-				if (resultDefn == "TransactionIndex") transactionIndex = resultValue;
-	
-				Response.Write(resultDefn);
-				Response.Write(": ");
-				Response.Write(resultValue);
-				Response.Write("<br>");
+				    //if 'result' not -1, authorisation was successful
+				    if (resultDefn == "Result" && resultValue != "-1") authorisationSuccessful = true;
+				    if (resultDefn == "TransactionIndex") transactionIndex = resultValue;
+    	
+				    Response.Write(resultDefn);
+				    Response.Write(": ");
+				    Response.Write(resultValue);
+				    Response.Write("<br>");
+                }
 			}
 			
 			if (authorisationSuccessful) {
@@ -282,8 +307,13 @@ namespace MyGate_Global_3D_Secure_Enterprise_Example
 			}
 		}
 		
-		public void performSettlement(string TransactionIdValue, string GatewayID, string MerchantUID, string ApplicationUID) {
-			MyGate_Global_3D_Secure_Enterprise_Example_enterprise_mygateglobal_com.ePayService settleReference = new MyGate_Global_3D_Secure_Enterprise_Example_enterprise_mygateglobal_com.ePayService();
+		public void performSettlement(string TransactionIdValue, string GatewayID, string MerchantUID, string ApplicationUID)
+        {
+            //Sandbox service
+            //wsCCPayments_sandbox.ePayService settleReference = new wsCCPayments_sandbox.ePayService();
+
+            //Production service
+            wsCCPayments.ePayService settleReference = new wsCCPayments.ePayService();
 			
 			object[] arrResults2 = settleReference.fProcess(
 				GatewayID,									//Gateway
